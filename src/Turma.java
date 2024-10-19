@@ -24,6 +24,10 @@ public class Turma {
         }
     }
 
+    public void removerTodosAlunos() {
+        alunos.clear();
+    }
+
     public void listarAlunos() {
         for (int i = 0; i < alunos.size(); i++) {
             Aluno aluno = alunos.get(i);

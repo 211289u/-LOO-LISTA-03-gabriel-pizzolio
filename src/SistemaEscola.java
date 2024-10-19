@@ -16,6 +16,7 @@ public class SistemaEscola {
             System.out.println("3. Remover Aluno da Turma");
             System.out.println("4. Listar Alunos da Turma");
             System.out.println("5. Definir Idade de um Aluno");
+            System.out.println("6. Remover Todos Alunos da Turma");
             System.out.println("9. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
@@ -36,6 +37,9 @@ public class SistemaEscola {
                     break;
                 case 5:
                     definirIdadeAluno();
+                    break;
+                case 6:
+                    removerTodosAlunosDaTurma();
                     break;
                 case 9:
                     System.out.println("Saindo do sistema...");
@@ -99,6 +103,19 @@ public class SistemaEscola {
             System.out.println(aluno.toString());
         } else {
             System.out.println("Aluno não encontrado.");
+        }
+    }
+
+    public void removerTodosAlunosDaTurma() {
+        System.out.println("Você tem certeza que deseja remover todos alunos da turma? 1. Sim 2. Não");
+        int confirmacao = scanner.nextInt();
+        scanner.nextLine();
+        
+        if (confirmacao == 1) {
+            turma.removerTodosAlunos();
+            System.out.println("Todos os alunos foram removidos da turma.");
+        } else {
+            System.out.println("Ação cancelada.");
         }
     }
 
