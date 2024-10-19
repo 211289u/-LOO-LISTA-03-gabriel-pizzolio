@@ -13,6 +13,7 @@ public class SistemaEscola {
             System.out.println("\n--- Menu ---");
             System.out.println("1. Cadastrar Aluno");
             System.out.println("2. Inserir Aluno na Turma");
+            System.out.println("3. Remover Aluno da Turma");
             System.out.println("9. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
@@ -25,7 +26,10 @@ public class SistemaEscola {
                 case 2:
                     inserirAlunoNaTurma();
                     break;
-                case 5:
+                case 3:
+                    removerAlunoDaTurma();
+                    break;
+                case 9:
                     System.out.println("Saindo do sistema...");
                     break;
                 default:
@@ -54,6 +58,19 @@ public class SistemaEscola {
             turma.adicionarAluno(aluno);
         } else {
             System.out.println("Aluno não encontrado. Certifique-se de que o aluno foi cadastrado.");
+        }
+    }
+
+    public void removerAlunoDaTurma() {
+        System.out.print("Digite o CPF do aluno a ser removido: ");
+        String cpf = scanner.nextLine();
+
+        Aluno aluno = buscarAlunoPorCpf(cpf);
+        if (aluno != null) {
+            turma.removerAluno(aluno);
+            System.out.println("Aluno removido da turma com sucesso.");
+        } else {
+            System.out.println("Aluno não encontrado.");
         }
     }
 
