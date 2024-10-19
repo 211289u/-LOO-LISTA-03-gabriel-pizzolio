@@ -14,6 +14,7 @@ public class SistemaEscola {
             System.out.println("1. Cadastrar Aluno");
             System.out.println("2. Inserir Aluno na Turma");
             System.out.println("3. Remover Aluno da Turma");
+            System.out.println("4. Listar Alunos da Turma"); 
             System.out.println("9. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
@@ -28,6 +29,9 @@ public class SistemaEscola {
                     break;
                 case 3:
                     removerAlunoDaTurma();
+                    break;
+                case 4:
+                    listarAlunosDaTurma();
                     break;
                 case 9:
                     System.out.println("Saindo do sistema...");
@@ -72,6 +76,10 @@ public class SistemaEscola {
         } else {
             System.out.println("Aluno não encontrado.");
         }
+    }
+
+    public void listarAlunosDaTurma() {
+        turma.listarAlunos();
     }
 
     public Aluno buscarAlunoPorCpf(String cpf) {

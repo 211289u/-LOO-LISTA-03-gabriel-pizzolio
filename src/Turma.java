@@ -16,14 +16,6 @@ public class Turma {
         alunos.add(aluno);
     }
 
-    public void removerAluno(int indice) {
-        if (indice >= 0 && indice < alunos.size()) {
-            alunos.remove(indice); 
-        } else {
-            System.out.println("Índice inválido.");
-        }
-    }
-
     public void removerAluno(Aluno aluno) {
         if (alunos.remove(aluno)) {
             System.out.println("Aluno removido com sucesso.");
