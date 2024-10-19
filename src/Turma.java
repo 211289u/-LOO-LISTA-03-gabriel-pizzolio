@@ -3,10 +3,28 @@ import java.util.ArrayList;
 public class Turma {
     private ArrayList<Aluno> alunos;
     private String nome;
+    private String codigo;
 
-    public Turma(String nome) {
+    public Turma(String nome, String codigo) {
         this.alunos = new ArrayList<>();
         this.nome = nome;
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public void adicionarAluno(Aluno aluno) {
